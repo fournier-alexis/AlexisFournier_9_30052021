@@ -122,7 +122,7 @@ describe("Given I am connected as an employee", () => {
         expect(bills.data.length).toEqual(5);
       });
 
-      test("fetches bills from an API and fails with 404 message error", async () => {
+      test("create a new bill and fails with 404 message error", async () => {
         firebase.post.mockImplementationOnce(() =>
           Promise.reject(new Error("Erreur 404"))
         );
@@ -132,7 +132,7 @@ describe("Given I am connected as an employee", () => {
         expect(message).toBeTruthy();
       });
 
-      test("fetches messages from an API and fails with 500 message error", async () => {
+      test("create a new bill and fails with 500 message error", async () => {
         firebase.post.mockImplementationOnce(() =>
           Promise.reject(new Error("Erreur 500"))
         );
